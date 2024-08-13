@@ -4,7 +4,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 
-class calculatorViewHolder(view:View) {
+class CalculatorViewHolder(view:View) {
     val display: TextView = view.findViewById(R.id.textview)
     val button0: Button = view.findViewById(R.id.button0)
     val button1: Button = view.findViewById(R.id.button1)

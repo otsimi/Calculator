@@ -1,5 +1,6 @@
 package com.simple.calculator
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
@@ -9,12 +10,12 @@ class MainActivity : AppCompatActivity() {
     private var operator = ""
     private var firstOperand = 0.0
     private var secondOperand = 0.0
-    private lateinit var viewHolder:calculatorViewHolder
+    private lateinit var viewHolder:CalculatorViewHolder
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        viewHolder = calculatorViewHolder(findViewById(R.id.main))
+        viewHolder = CalculatorViewHolder(findViewById(R.id.main))
 
         if (savedInstanceState != null) {
             currentInput = savedInstanceState.getString("currentInput", "")
@@ -78,6 +79,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun calculateResult() {
         if (currentInput.isNotEmpty()) {
             secondOperand = currentInput.toDouble()
@@ -93,6 +95,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun clear() {
         currentInput = ""
         operator = ""
